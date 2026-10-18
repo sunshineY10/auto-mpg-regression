@@ -1,0 +1,29 @@
+# 环境与密钥(绝不入库)
+.env
+.env.*
+!.env.example
+.dvc/config.local # DVC 的 SAS 令牌写在这里,DVC 默认将其排除出 Git
+
+# 虚拟环境与编译缓存
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# 数据文件:按扩展名忽略。切勿写 data/* 或 /data/ --
+# DVC 3.x 的忽略匹配不支持"否定式重新包含",整目录忽略会连 .dvc 指针一起跳过,
+# 导致 dvc status 误报 "no data or pipelines tracked"(本机实测,详见附录 C)。
+# 注意:UCI 解压后不止 .data/.zip,还有 .data-original、.names 和无扩展名的 Index,
+# 漏写会让这些原始文件被 git add data/ 带进版本库(见阶段 1 的核对步骤)。
+data/*.csv
+data/*.data
+data/*.data-original
+data/*.names
+data/*.zip
+data/*.xlsx
+data/Index
+
+# 模型实验产物
+mlruns/
+mlflow.db
