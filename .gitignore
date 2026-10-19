@@ -10,6 +10,8 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.idea/
+.vscode/
 
 # 数据文件:按扩展名忽略。切勿写 data/* 或 /data/ --
 # DVC 3.x 的忽略匹配不支持"否定式重新包含",整目录忽略会连 .dvc 指针一起跳过,

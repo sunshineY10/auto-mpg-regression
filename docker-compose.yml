@@ -1,0 +1,8 @@
+services:
+  mpg-app:
+    build: .
+    ports:
+      - "8080:8000"
+    environment:
+      - APP_ENV=development
+      - MODEL_VERSION=local-dev
