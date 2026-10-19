@@ -32,6 +32,18 @@ def health() -> HealthResponse:
     return HealthResponse(status="ok", model_loaded=is_loaded())
 
 
+@app.get("/model-info")
+def model_info() -> dict:
+    return {
+        "model_type": "LinearRegression",
+        "model_version": MODEL_VERSION,
+        "app_env": APP_ENV,
+        "features": FEATURE_ORDER,
+        "target": "mpg",
+    }
+    return HealthResponse(status="ok", model_loaded=is_loaded())
+
+
 @app.post("/predict", response_model=PredictResponse)
 def predict(req: PredictRequest) -> PredictResponse:
     model = get_model()
