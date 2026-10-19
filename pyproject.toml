@@ -1,0 +1,7 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/F 是 pycodestyle 与 pyflakes 核心规则集，覆盖绝大多数低级错误
+select = ["E", "F"]

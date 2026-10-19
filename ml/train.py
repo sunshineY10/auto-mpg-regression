@@ -26,7 +26,7 @@ _ROOT = Path(__file__).resolve().parent.parent
 if str(_ROOT) not in __import__("sys").path:
     __import__("sys").path.insert(0, str(_ROOT))
 
-from ml.data_pipeline import (
+from ml.data_pipeline import (  # noqa: E402
     V2_FEATURE_COLUMNS,
     coerce_horsepower,
     encode_origin,

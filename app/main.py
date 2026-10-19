@@ -50,5 +50,7 @@ def predict(req: PredictRequest) -> PredictResponse:
 def index() -> HTMLResponse:
     return HTMLResponse(
         "<h3>MPG Prediction Service</h3>"
-        "<p>POST <code>/predict</code> with JSON body, GET <code>/health</code> to check status.</p>"
+        "<p>POST <code>/predict</code> with JSON body, "
+        "GET <code>/health</code> to check status.</p>"
     )
+
