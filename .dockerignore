@@ -1,0 +1,25 @@
+# 构建上下文排除:Git 历史、虚拟环境、缓存、测试、数据、密钥--一个都别进镜像
+.git/
+.github/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+tests/
+
+# 原始数据绝不进镜像(模型文件在 app/model/,随 app/ 进)
+.dvc/
+data/
+.dvcignore
+mlruns/
+mlflow.db
+*.pdb
+
+.env
+.env.*
+!.env.example
+
+*.md
+Dockerfile
+.dockerignore
