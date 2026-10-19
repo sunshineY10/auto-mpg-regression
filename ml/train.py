@@ -223,9 +223,14 @@ def main() -> None:
         })
 
         # 记录模型
+        # 记录模型
         model_info = mlflow.sklearn.log_model(
-            model, artifact_path="model", registered_model_name=MODEL_REGISTRY_NAME
+            model,
+            artifact_path="model",
+            registered_model_name=MODEL_REGISTRY_NAME,
+            skops_trusted_types=["numpy.dtype"]
         )
+
         log_residual_plot(y_test.to_numpy(), y_pred)
 
         run_id = mlflow.active_run().info.run_id
