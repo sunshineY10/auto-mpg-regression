@@ -27,3 +27,7 @@ data/Index
 # 模型实验产物
 mlruns/
 mlflow.db
+
+# 生产模型二进制文件(走 DVC/制品库,不进 git)
+app/model/*.pkl
+app/model/*.joblib
